@@ -1,0 +1,2 @@
+export function toggleChild(current:(string|null)[]|null|undefined,all:(string|null)[],child:string|null,checked:boolean){const selected=current===null?all:current??[];return checked?[...new Set([...selected,child])]:selected.filter(x=>x!==child)}
+export function selectionState(current:(string|null)[]|null|undefined,all:(string|null)[]){return current===undefined?'none':current===null||current.length===all.length?'all':current.length?'partial':'none'}

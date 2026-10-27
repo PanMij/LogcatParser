@@ -1,0 +1,5 @@
+12-02 18:44:43.211 17259 19363 E GCloud  : [Download]PCDN Resume here
+12-02 18:44:43.212 17259 19363 I GameAssist: [TileHost]refreshPluginTiles()
+12-02 18:44:43.213 17259 19363 D GameAssist: [GameScreensaver.Power]updateWakefulness()
+12-02 18:44:43.214 17259 19363 W GameAssist: window state changed
+    at example.Stack.run(Stack.java:12)

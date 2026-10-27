@@ -1,8 +1,15 @@
 import os
 import sqlite3
 
+class Connection(sqlite3.Connection):
+    def __exit__(self, *args):
+        try:
+            return super().__exit__(*args)
+        finally:
+            self.close()
+
 def connect():
-    db = sqlite3.connect(os.environ.get('LOGCAT_DB', 'logcat.sqlite'), timeout=60)
+    db = sqlite3.connect(os.environ.get('LOGCAT_DB', 'logcat.sqlite'), timeout=60, factory=Connection)
     db.row_factory = sqlite3.Row
     db.executescript('''
     PRAGMA journal_mode=WAL;
